@@ -1,0 +1,60 @@
+<!--
+ Created by Moloney on 1/18/2018.
+ Lab 5 Bus Tracker
+ Dr. Hornick
+ SE-2840
+ Web Application Development
+ This file contains the information that structures the content on the web page
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Lab 5 Donal Moloney</title>
+    <!-- This allows the program to use boostrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- These link all the scripts used in the project to one another-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.0/Chart.min.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHyPZ13x3wXgUD3I-Sh29Vd7_BBUwNJ-s"></script>
+    <script src="./BusTracker.js" type="text/javascript"></script>
+    <script src="./key.js" type="text/javascript"></script>
+    <script>
+        <!--This is what starts the bus tracker program -->
+    		new BusTracker();
+    </script>
+    <!-- Formats the map so it can be sean -->
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<!-- Causes the screen to readjust to the size of the page -->
+<div class="container-fluid">
+    <!-- Label for the route-->
+    <label>Route: </label>
+    <input id="route" type=text value="">
+    <!-- Start button with bootstrap class info design -->
+    <input class="btn btn-info" id="start" type=button value="Start">
+    <!-- Stop button with bootstrap class info design -->
+    <input class="btn btn-info" id="stop" type=button value="Stop">
+    <!-- Label for update info text seen is dynamically set -->
+    <label id="update"></label>
+    <!-- Div where map will be placed displays Error cant see when error occurs displaying the map-->
+    <div id="map">Error Can't see</div>
+    <!-- the br adds 2 returns under the map so the table is not jammed against it-->
+    <br><br>
+    <!-- This is a table with the bootstrap class for creating stripped table-->
+    <table id="table1" class="table table-striped"></table>
+    <!-- This list is where the errors encountered in the bootstrap are dynamically set -->
+    <ul id="errList"></ul>
+</div>
+</body>
+</html>
